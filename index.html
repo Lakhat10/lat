@@ -3,24 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Projet</title>
-    <script>
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                const usersList = document.getElementById('users');
-                data.utilisateurs.forEach(user => {
-                    const li = document.createElement('li');
-                    li.textContent = `${user.nom} - Age: ${user.age}`;
-                    usersList.appendChild(li);
-                });
-            })
-            .catch(error => console.error('Erreur:', error));
-    </script>
+    <title>Site d'Enregistrement de Cours</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Liste des Utilisateurs</h1>
-    <ul id="users"></ul>
+    <header>
+        <h1>Bienvenue sur le site d'enregistrement de cours</h1>
+        <nav>
+            <ul>
+                <li><a href="#cours">Cours</a></li>
+                <li><a href="#videos">Vidéos</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="cours">
+            <h2>Cours Disponibles</h2>
+            <p>Liste des cours ici...</p>
+        </section>
+        <section id="videos">
+            <h2>Vidéos</h2>
+            <p>Liste des vidéos ici...</p>
+        </section>
+        <section id="images">
+            <h2>Galerie d'Images</h2>
+            <p>Galerie d'images ici...</p>
+        </section>
+        <section id="apropos">
+            <h2>À propos</h2>
+            <p>Informations sur le site...</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form>
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Site d'Enregistrement de Cours</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
